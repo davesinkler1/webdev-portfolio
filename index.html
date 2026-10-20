@@ -5,6 +5,104 @@
 <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <label>Language/ Bahasa: </label>
+  <select id="lang-switcher">
+      <option value="en">English</option>
+      <option value="ina">Bahasa Indonesia</option>
+ </select>
+ <button onclick="checkValue()">Check Value</button>
+<script type="text/javascript">
+   function checkValue() {
+    let count = 1;
+    const val = document.getElementById('lang-switcher').value;
+    console.log(val);
+    if (val == "en") {
+      while (count < 23) {
+        console.log("en: " + count);
+        document.getElementById("ina" + count).style.display = "none";
+        document.getElementById("eng" + count).style.display = "inline";
+        count++;
+      }
+    } else if (val == "ina") {
+      while (count < 23) {
+        console.log("ina" + count);
+        document.getElementById("eng" + count).style.display  = "none";
+        document.getElementById("ina" + count).style.display = "inline";
+        count++;
+      }
+     
+    }
+  }
+
+  var translation = {
+    header1: {
+      en_US: "Welcome to my portfolio!",
+      ina_INA: "Portfolio web development saya!"
+    },
+    paragraph1: {
+      en_US: "Hello! I'm a full-stack web developer with experience in Node.JS, Next.JS, HTML/CSS, JS,PHP, MongoDB, and Wordpress. I have worked on many personal projects that mainly has to do with me working with React or Next. I can also develop and design websites using Wordpress and Elementor, making sleek-looking, minimistic, and professional Wordpress websites for your business needs. I am most proud with my NextJS digital library project which taught me how to utilize MongoDB to fetch data and also display the dat using Typescript, I also learned how to use cookies to store data and also how to implement pagination for the digital library. All in all, below this is more information about me and also a preview of all the web development projects that I have done.",
+      ina_INA: "Halo! Saya adalah seorang full-stack web developer dengan pengalaman melakukan project-project Node.JS, Next.JS, HTML/CSS, JS, MongoDB, dan Wordpress. Terutama saya mempunyai banyak pengalaman melakukan project-project React atau NextJS. Saya juga bisa mendevelop dan mendesign website Wordpress menggunakkan plugin Elementor, dimana saya mendesign website-website yang mempunyai layout minimalis dan professional untuk keperluan-keperluan bisnis. Saya paling bangga dengan project digital library NextJS karena project itu membuat saya lebih paham tentang cara menggunakkan MongoDB untuk mengambil data dan mendisplaykan data tersebut menggunakan Typescript. Melalui project ini saya juga jadi lebih paham tentang cara menggunakan cookies untuk menyimpan data dan juga bagaimana cara mengimplementasi pagination. Dibawah ini adalah showcase project-project saya."
+    },
+    header2: {
+      en_US: "About me",
+      ina_INA: "Tentang saya"
+    },
+    paragraph2: {
+      en_US: "A brief introduction about myself",
+      ina_INA: "Pengenalan singkat tentang saya"
+    },
+    strong1: {
+      en_US1: "Full name: ",
+      ina_INA1: "Nama lengkap: ",
+      en_US2: "Education: ",
+      ina_INA2: "Universitas: ",
+      en_USA3: "Profession: ",
+      ina_INA3: "Profesi: ",
+      en_US4: "Contact: ",
+      ina_INA4: "Kontak: ",
+      en_US5: "Hobby: ",
+      ina_INA5: "Hobi: ",
+      en_US6: "Address: ",
+      ina_INA6: "Alamat: "
+    },
+    paragraph3: {
+      en_US1: "Technology/Tools: NextJS, Typescript, MongoDB",
+      ina_INA1: "Bahasa pemograman: NextJS, Typescript, MongoDB",
+      en_US2: "Description: This NextJS Digital Library is a web-app developed using NextJS, Typescript, and MongoDB. This web app’s function is to provide users with free books in the form of scanned PDFs. This web app currently features pagination, search features, and PDFs to read, and in the future, user-made contribution will be added as a feature. ",
+      ina_INA2: "Deskripsi: Project NextJS digital library ini adalah project development web app menggunakkan NextJS, Typescript, dan MongoDB. Tujuan project web app ini adalah agar user-user web app ini bisa membaca buku-buku melalui PDF gratis. Untuk saat ini web app ini mempunyai fitur-fitur seperti pagination, search PDF, dan PDF-PDF gratis untuk dibaca, dan kedepannya, kontribusi user akan ditambahkan sebagai fitur juga. ",
+      en_US3: "Technology/Tools: Wordpress, Elementor",
+      ina_INA3: "Bahasa pemograman: Wordpress, Elementor",
+      en_US4: "Description: This Wordpress website is a website that was made to showcase and promote a real estate agency. Since the objective of this website was to serve as some sort of a promotion site and also a landing page for the agency, so because of that I then designed the website to have a professional, minimalist, and modern look. This website includes a custom HTML code to display a search box and pricing lists for the houses.",
+      ina_INA4: "Deskripsi: Website Wordpress ini didevelop untuk menshowcase dan mempromosikan sebuah agensi real estate. Karena tujuan wesite ini adalah untuk mempromosikan agensi real estate, maka saya mendesign layout website tersebut untuk mempunyai design yang professional, minimalis, dan modern. Website ini mempunyai custom HTML untuk mendisplay search box dan list pricing untuk rumah-rumah yang di list oleh agensi tersebut.",
+      en_US5: "Technology/Tools: ReactJS, Express",
+      ina_INA5: "Bahasa pemograman: ReactJS, Express",
+      en_US6: "Description: RPS was a ReactJS web app I developed that uses cookies and ReactJS functionalities in order for users to be able to play rock, paper, scissors against a bot opponent. Features included in this web app are: win-streak counter and vs bot functionality. ",
+      ina_INA6: "Deskripsi: RPS adalah web app ReactJS yang saya develop yang menggunakkan cookies dan fungsionalitas-fungsionalitas ReactJS agar user-user bisa main gunting, batu, kertas dengan bot opponent. Fitur-fitur yang ada di web app ini adalah: win-streak counter dan fungsionalitas vs bot.",
+      en_US7: "Technology/Tools: React,JS, Express, MongoDB",
+      ina_INA7: "Bahasa pemograman: ReactJS, Express, MongoDB",
+      en_US8: "Description: ToDo WebApp was a web app that I developed using ReactJS, Express, and MongoDB. This web app is intended to provide users with the ability to list a task that they want to finish and when they are done with that task they can checklist the task that they have done. The web app makes use ReactJS to provide front-end functionalities, Express to handle server-side tasks, and MongoDB to store data for Express to retrieve from.",
+      ina_INA8: "Deskripsi: ToDo WebApp adalah web app yang saya develop menggunakkan ReactJS, Express dan MongoDB. Web app ini dibuat dengan tujuan agar user-user web app ini bisa melist task-task yang mereka mau selesaikan dan saat mereka sudah selesai melakukan salah satu task-task tersebut, user bisa menchecklist task yang sudah selesai tersebut untuk menandai task tersebut sudah diselesaikan. web app ini menggunakkan ReactJS untuk membuat fungsionalitas-fungsionalitas front-end, Express untuk menghandle bagian server-side, dan MongoDB untuk menyimpan data agar data bisa diambil dari database MongoDB.",
+      en_US9: "Technology/Tools: HTML, CSS",
+      ina_INA9: "Bahasa pemograman: HTML, CSS",
+      en_US10: "Description: Best Joe In Town was a web site that I developed to promote a Binus ELATE theater play. The director of the play wanted a website that has a Y2K/ 90s feel to it because the play's backdrop is of 90s/ ealy 2000s tv shows, so I recommended to the director that the website should be made in basic HTML/CSS and also should be hosted in nekoinfinity so that hosting the website would be easy and not complicated. From doing this project, I've learned alot about designing a website only using HTML/CSS and I've also learnt alot about UI/UX design.",
+      ina_INA10: "Deskripsi: Best Joe In Town adalah website yang saya desain dan develop untuk mempromosikan play teater Binus ELATE. Sutradara play nya mau website yang mempunyai vibe 90an/ 2000an karena play nya juga mempunyai vibe 90an/ 2000an, jadi saya merekomendasikan ke sutradara nya untuk membuat website nya menggunakkan basic HTML/CSS dan menghost website nya menggunakkan nekoinfinity jadi hosting website nya lebih mudah dilakukan. Dari melakukan project ini, Saya jadi belajar banyak tentang website development menggunakkan HTML/CSS dan juga cara mendesign UI/UX.",
+      en_US11: "Technology/Tools: HTML, CSS",
+      ina_INA11: "Bahasa pemograman: HTML, CSS",
+      en_US12: "Description: This was a wordpress website I developed that was made to promote a pizza place and to also showcase the pizzas that they have to offer. Since it is a landing page for a pizza place, I opted to design the website with bright colors in mind so that it catches the user's attention and I also made it so that the website also features the place's contact, menu, and what services they offer so that the user can easily find out where the place is and what kind of pizzas do they have.",
+      ina_INA12: "Deskripsi: Website wordpress ini adalah website wordpress yang saya develop untuk mempromosikan restoran pizaa dan juga untuk menshowcase pizza-pizza yang dijual di restoran ini. Saya memilih untuk mendesain website ini menggunakkan color pallete yang bisa langsung menarik perhatian user dan untuk fitur-fitur website nya, saya membuat fitur-fitur seperti: menu, kontak info, dan showcase pelayanan apa saja yang diberikan oleh restoran tersebut. ",
+      en_US13: "Technology/Tools: HTML/CSS, PHP, Javascript",
+      ina_INA13: "Bahasa pemograman: HTML/CSS, PHP, Javascript",
+      en_US14: "Description: This was an e-commerce site that I made using basic HTML/CSS, PHP, and Javascript, with SQL serving as the DBMS used for this website. I developed and designed this website with a minimalist and modern design in mind, with the website using a modern and minimalist design, it would be easier on the eyes for users and the products would feature more prominently. This e-commerce wesbite features a cart system and filter system to filter and add products into the cart. Doing this project taught me alot about developing the backend part and also taught me alot about web development using PHP.",
+      ina_INA14: "Deskripsi: Website ini adalah website e-commerce yang saya buat menggunakkan basic HTML/CSS, PHP, dan JavaScript, dengan saya menggunakkan SQL sebagai DBMS website ini. Saya mendevelop dan mendesain website ini dengan desain yang minimalis dan modern. Dengan desain yang modern dan minimalis, layout website menjadi lebih mudah dinavigasi. Website ini mempunyai fitur-fitur seperti: system cart, system filter produk, dan system menambahkan produk-produk ke dalam cart. Melakukan project ini membuat saya jadi lebih paham tentang back-end development dan juga web development menggunakkan PHP."
+    }
+  }
+
+  function get_i18n(item, lang) {
+    document.write(translation[item][lang]);
+  }
+
+
+</script>
 <div class="container">
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: #0067D7;
 background: linear-gradient(90deg, rgba(0, 103, 215, 1) 64%, rgba(36, 68, 99, 1) 100%, rgba(237, 221, 83, 1) 100%);">
@@ -23,15 +121,11 @@ background: linear-gradient(90deg, rgba(0, 103, 215, 1) 64%, rgba(36, 68, 99, 1)
 <div id="container">
     <div class="row">
     <div class="col-sm">
-    <h1>Welcome to my portfolio!</h1>
-    <p>Hello! I'm a full-stack web developer with experience in Node.JS, Next.JS, HTML/CSS, JS,
-      PHP, MongoDB, and Wordpress. I have worked on many personal projects that mainly has to do with
-      me working with React or Next. I can also develop and design websites using Wordpress and Elementor, 
-      making sleek-looking, minimistic, and professional Wordpress websites for your business needs. I am
-      most proud with my NextJS digital library project which taught me how to utilize MongoDB to fetch data and also
-      display the dat using Typescript, I also learned how to use cookies to store data and also how to implement pagination for 
-      the digital library. All in all, below this is more information about me and also a preview of all the web development
-      projects that I have done </p>
+    <h1 class="header1" id="eng"><script>get_i18n('header1','en_US');</script></h1>
+    <h1 class="header1" id="ina" style="display: none;"><script>get_i18n('header1','ina_INA');</script></h1>
+    <br>
+    <p class="paragraph1" id="eng1"><script>get_i18n('paragraph1','en_US');</script></p>
+    <p class="paragraph1" id="ina1" style="display: none;"><script>get_i18n('paragraph1','ina_INA');</script></p>
     <a href="#Portfolio"><button style="width: 100%; background-color: #0067D7; color: white;">Learn more</button></a>
     </div>
     <div class="col-sm">
@@ -42,18 +136,26 @@ background: linear-gradient(90deg, rgba(0, 103, 215, 1) 64%, rgba(36, 68, 99, 1)
 <hr>
 <div id="Biodata">
 <div class="bio-header">
-    <h1 style="color:#067bff;">About Me</h1>
-    <p>A brief intoduction about myself</p>
+    <h1 style="color:#067bff;" id="eng2"><script>get_i18n('header2','en_US');</script></h1>
+    <h1 style="color:#067bff; display: none;" id="ina2"><script>get_i18n('header2','ina_INA');</script></h1>
+    <p id="eng3"><script>get_i18n('paragraph2','en_US');</script></p>
+    <p id="ina3" style="display: none;"><script>get_i18n('paragraph2','ina_INA');</script></p>
 </div>
 <div class="container">
     <div class="row">
-    <div class="col-md-4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong>Full Name: </strong></p><p>Jaudan Afzal</p></button></div>
-    <div class="col-md-4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong>Education: </strong></p><p style="font-size: 19px;">Universiti Teknologi Malaysia</p></button></div>
-    <div class="col-md-4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong>Profession: </strong></p><p>IT Infrastructure</p></button></div>
+    <div class="col-md-4" id="eng3"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','en_US1');</script> </strong></p><p>Jaudan Afzal</p></button></div>
+    <div class="col-md-4" style="display: none;" id="ina3"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','ina_INA1');</script> </strong></p><p>Jaudan Afzal</p></button></div>
+    <div class="col-md-4" id="eng4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','en_US2');</script></strong></p><p style="font-size: 19px;">Universiti Teknologi Malaysia</p></button></div>
+    <div class="col-md-4" style="display: none;" id="ina4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','ina_INA2');</script></strong></p><p style="font-size: 19px;">Universiti Teknologi Malaysia</p></button></div>
+    <div class="col-md-4" id="eng5"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','en_US3');</script></strong></p><p>IT Infrastructure</p></button></div>
+    <div class="col-md-4" style="display: none;" id="ina5"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','ina_INA3');</script></strong></p><p>IT Infrastructure</p></button></div>
     <div class="w-100"></div>
-    <div class="col-md-4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong>Contact: </strong></p><p style="font-size: 22px; text-align: center;">jaudanafzal61@gmail.com</p></button></div>
-    <div class="col-md-4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong>Hobby: </strong></p><p style="font-size: 13px;">Reading books, Playing the guitar, Drawing</p></button></div>
-    <div class="col-md-4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong>Address: </strong></p><p style="font-size: 24px;">Jakarta</p></button></div>
+    <div class="col-md-4" id="eng6"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','en_US4');</script></strong></p><p style="font-size: 22px; text-align: center;">jaudanafzal61@gmail.com</p></button></div>
+    <div class="col-md-4" style="display: none; " id="ina6"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong id=><script>get_i18n('strong1','ina_INA4');</script></strong></p><p style="font-size: 22px; text-align: center;">jaudanafzal61@gmail.com</p></button></div>
+    <div class="col-md-4" id="eng7"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','en_US5');</script></strong></p><p style="font-size: 13px;">Baca buku, Main gitar, Digital art</p></button></div>
+    <div class="col-md-4" style="display: none;" id="ina7"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','ina_INA5');</script></strong></p><p style="font-size: 13px;">Reading books, Playing the guitar, Drawing</p></button></div>
+    <div class="col-md-4" id="eng8"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','en_US6');</script></strong></p><p style="font-size: 24px;">Jakarta</p></button></div>
+    <div class="col-md-4" style="display: none;" id="ina8"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"><strong><script>get_i18n('strong1','ina_INA6');</script></strong></p><p style="font-size: 24px;">Jakarta</p></button></div>
     </div>
 </div>
 </div>
@@ -84,94 +186,73 @@ background: linear-gradient(90deg, rgba(0, 103, 215, 1) 64%, rgba(36, 68, 99, 1)
 <br>
     <div class="container">
       <div class="row">
-        <div class="col border border-black">
+        <div class="col border border-black" style="display: grid;">
        
         <img src="Screenshot1_sm.png" width="350px" height="200px" class="img-thumbnail">
         <h3>Next.JS digital library</h3>
-        <p>Technology/Tools: NextJS, Typescript, MongoDB</p> 
-        <p>Description: This NextJS Digital Library is a web-app developed using NextJS, 
-Typescript, and MongoDB. This web app’s function is to provide users with free 
-books in the form of scanned PDFs. This web app currently features pagination, 
-search features, and PDFs to read, and in the future, user-made contribution will be 
-added as a feature. </p>
-        
+        <p id="eng9"><script>get_i18n('paragraph3','en_US1');</script></p> 
+        <p id="ina9" style="display: none;"><script>get_i18n('paragraph3','ina_INA1');</script></p> 
+        <p id="eng10"><script>get_i18n('paragraph3','en_US2');</script></p>
+        <p id="ina10" style="display: none;"><script>get_i18n('paragraph3','ina_INA2');</script></p>
         </div>
-     <div class="col offset-md-1 border border-black">
-       
+        <div class="col offset-md-1 border border-black" style="display: grid;">
         <img src="Screenshot2_sm.png" width="350px" height="200px" class="img-thumbnail">
         <h3>Wordpress real estate agency website</h3>
-        <p>Technology/Tools: Wordpress, Elementor </p>
-<p>Description: This Wordpress website is a website that was made to showcase and promote 
-  a real estate agency. Since the objective of this webite was to server as some sort of 
-  a promotion site and also a landing page for the agency, and so because of that I then designed the website to have a
-  professional, minimalist, and modern look. This website includes a custom HTML code to display a 
-search box and pricing lists for the houses.</p>
+        <p id="eng11"><script>get_i18n('paragraph3','en_US3');</script></p> 
+        <p id="ina11" style="display: none;"><script>get_i18n('paragraph3','ina_INA3');</script></p>
+        <p id="eng12"><script>get_i18n('paragraph3','en_US4');</script></p>
+        <p id="ina12" style="display: none;"><script>get_i18n('paragraph3','ina_INA4');</script></p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col border border-black" style="display: grid;">
+    <img src="Screenshot4.png" width="350px" height="200px" class="img-thumbnail">
+    <h3>React.JS RPS</h3>
+    <p id="eng13"><script>get_i18n('paragraph3','en_US5');</script></p>
+    <p id="ina13" style="display: none;"><script>get_i18n('paragraph3','ina_INA5');</script></p>
+    <p id="eng14"><script>get_i18n('paragraph3','en_US6');</script></p>
+    <p id="ina14" style="display: none;"><script>get_i18n('paragraph3','ina_INA6');</script></p>
+    
+    </div>
+    <div class="col offset-md-1 border border-black" style="display: grid;">
+    
+    <img src="Screenshot5.png" width="350px" height="200px" class="img-thumbnail">
+    <h3>React.JS to-do list</h3>
+    <p id="eng15"><script>get_i18n('paragraph3','en_US7');</script></p>
+    <p id="ina15" style="display: none;"><script>get_i18n('paragraph3','ina_INA7');</script></p>  
+    <p id="eng16"><script>get_i18n('paragraph3','en_US8');</script></p>
+    <p id="ina16" style="display: none;"><script>get_i18n('paragraph3','ina_INA8');</script></p>
     
     </div>
     <div class="w-100"></div>
-    <div class="col border border-black">
-     
-        <img src="Screenshot4.png" width="350px" height="200px" class="img-thumbnail">
-        <h3>React.JS RPS</h3>
-        <p>Technology/Tools: React,JS, Express</p>
-<p>Description: RPS was a ReactJS web app I developed that uses cookies and ReactJS 
-functionalities in order for users to be able to play rock, paper, scissors against a bot 
-opponent. Features included in this web app are: win-streak counter and vs bot 
-functionality. </p>
-    
-    </div>
-    <div class="col offset-md-1 border border-black">
-    
-        <img src="Screenshot5.png" width="350px" height="200px" class="img-thumbnail">
-        <h3>React.JS to-do list</h3>
-        <p>Technology/Tools: React,JS, Express, MongoDB</p> 
-<p>Description: ToDo WebApp was a web app that I developed using ReactJS, Express, 
-and MongoDB. This web app is intended to provide users with the ability to list a task 
-that they want to finish and when they are done with that task they can checklist the 
-task that they have done. The web app makes use ReactJS to provide front-end 
-functionalities, Express to handle server-side tasks, and MongoDB to store data for 
-Express to retrieve from. </p>
-    
-    </div>
-    <div class="w-100"></div>
-    <div class="col-sm border border-black">
+    <div class="col-sm border border-black" style="display: grid;">
     
         <img src="Screenshot6.png" width="350px" height="200px" class="img-thumbnail">
         <h3>Best Joe In Town</h3>
-        <p> Technology/Tools: HTML, CSS</p> 
-<p>Description: Best Joe In Town was a web site that I developed to promote a Binus 
-ELATE theater play. The director of the play wanted a website that has a Y2K/ 90s feel to it
-because the play's backdrop is of 90s/ ealy 2000s tv shows, so I recommended to the director that the
-website should be made in basic HTML/CSS and also should be hosted in nekoinfinity so that hosting the website
-would be easy and not complicated. From doing this project, I've learned alot about designing a website only using HTML/CSS 
-and I've also learnt alot about UI/UX design.</p>
-</div>
+        <p id="eng17"><script>get_i18n('paragraph3','en_US9');</script></p>
+        <p id="ina17" style="display: none;"><script>get_i18n('paragraph3','ina_INA9');</script></p> 
+        <p id="eng18"><script>get_i18n('paragraph3','en_US10');</script></p>
+        <p id="ina18" style="display: none;"><script>get_i18n('paragraph3','ina_INA10');</script></p>
+        </div>
   <div class="col-sm offset-md-1 border border-black">
     
         <img src="Screenshot3.png" width="350px" height="200px" class="img-thumbnail">
         <h3>Tempat-Pizza</h3>
-        <p> Technology/Tools: HTML, CSS</p> 
-<p>Description: Technology/Tools: Wordpress, Elementor 
-Description: This was a wordpress website I developed that was made to promote a pizza place and to also
-showcase the pizzas that they have to offer. Since it is a landing page for a pizza place,
-I opted to design the website with bright colors in mind so that it catches the user's attention and I also made it
- so that the website also features the place's contact, menu, and what services they offer so that the user can easily
- find out where the place is and what kind of pizzas do they have. </p>
-</div>
-</div>
-<br>
-<div class="col-sm border border-black" style="padding-top: 5%;">
+        <p id="eng19"><script>get_i18n('paragraph3','en_US11');</script></p>
+        <p id="ina19" style="display: none;"><script>get_i18n('paragraph3','ina_INA11');</script></p>
+        <p id="eng20"><script>get_i18n('paragraph3','en_US12');</script></p>
+        <p id="ina20" style="display: none;"><script>get_i18n('paragraph3','ina_INA12');</script></p>
+  </div>
+  </div>
+  <br>
+  <div class="col-sm border border-black grid" style="padding-top: 5%;">
     
         <img src="Screenshot11.png" width="350px" height="200px" class="img-thumbnail">
         <h3>E-Commerce site</h3>
         <br>
-        <p> Technology/Tools: HTML/CSS, PHP, Javascript</p> 
-<p>Description: This was an e-commerce site that I made using basic HTML/CSS, PHP, and Javascript, with SQL serving as the DBMS 
-  used for this website. I developed and designed this website with a minimalist and modern design in mind, with the website using a
-  modern and minimalist design, it would be easier on the eyes for users and the products would feature more prominently.
-  This e-commerce wesbite features a cart system and filter system to filter and
-  add products into the cart. Doing this project taught me alot about developing the backend part and also taught me alot
-  about web development using PHP.</p>
+        <p id="eng21"><script>get_i18n('paragraph3','en_US13');</script></p> 
+        <p id="ina21" style="display: none;"><script>get_i18n('paragraph3','ina_INA13');</script></p> 
+        <p id="eng22"><script>get_i18n('paragraph3','en_US14');</script></p>
+        <p id="ina22" style="display: none;"><script>get_i18n('paragraph3','ina_INA14');</script></p>
 </div>
 </div>
 </div>

@@ -42,6 +42,7 @@
 
 .bio-header {
     text-align: center;
+    display: grid;
 }
 
 .bio-content {
