@@ -3,6 +3,44 @@
 <title>portfolio website</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="index.css">
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "rOlYxoxjoemifkqJ8",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        const serviceID = 'service_rt3vhul';
+        const templateID = 'template_nfddhv3';
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+
+        const today = new Date();
+        
+        // Format it as a readable string (e.g., "November 6, 2026")
+        const formattedDate = today.toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Insert the date into the HTML
+        document.getElementById('current-date').value = formattedDate;
+  </script>
 </head>
 <body>
   <label>Language/ Bahasa: </label>
@@ -10,7 +48,7 @@
       <option value="en">English</option>
       <option value="ina">Bahasa Indonesia</option>
  </select>
- <button onclick="checkValue()">Check Value</button>
+ <button onclick="checkValue()">Change Language</button>
 <script type="text/javascript">
    function checkValue() {
     let count = 1;
@@ -94,6 +132,14 @@
       ina_INA13: "Bahasa pemograman: HTML/CSS, PHP, Javascript",
       en_US14: "Description: This was an e-commerce site that I made using basic HTML/CSS, PHP, and Javascript, with SQL serving as the DBMS used for this website. I developed and designed this website with a minimalist and modern design in mind, with the website using a modern and minimalist design, it would be easier on the eyes for users and the products would feature more prominently. This e-commerce wesbite features a cart system and filter system to filter and add products into the cart. Doing this project taught me alot about developing the backend part and also taught me alot about web development using PHP.",
       ina_INA14: "Deskripsi: Website ini adalah website e-commerce yang saya buat menggunakkan basic HTML/CSS, PHP, dan JavaScript, dengan saya menggunakkan SQL sebagai DBMS website ini. Saya mendevelop dan mendesain website ini dengan desain yang minimalis dan modern. Dengan desain yang modern dan minimalis, layout website menjadi lebih mudah dinavigasi. Website ini mempunyai fitur-fitur seperti: system cart, system filter produk, dan system menambahkan produk-produk ke dalam cart. Melakukan project ini membuat saya jadi lebih paham tentang back-end development dan juga web development menggunakkan PHP."
+    },
+    header4: {
+      en_US: "Services",
+      ina_INA: "Layanan"
+    },
+     paragraph4: {
+      en_US: "Services that I offer.",
+      ina_INA: "Layanan yang saya lakukan.",
     }
   }
 
@@ -106,13 +152,14 @@
 <div class="container">
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: #0067D7;
 background: linear-gradient(90deg, rgba(0, 103, 215, 1) 64%, rgba(36, 68, 99, 1) 100%, rgba(237, 221, 83, 1) 100%);">
-<a class="navbar-brand mb-0 h1" style="color: white; margin-right: 8%;">Brand</a>
+<a class="navbar-brand mb-0 h1" style="color: white; margin-right: 8%;">Blazar Web Dev</a>
     <div class="nav-container" >
     <div class="collapse navbar-collapse" id="NavContent">
     <ul class="navbar-nav">
-        <li class="nav-item active">Header</li>
+        <a href="#Services" style="text-decoration: none; color: white;"><li class="nav-item active">Services</li></a>
         <a href="#Biodata" style="text-decoration: none; color: white;"><li class="nav-item active">Biodata</li></a>
         <a href="#Portfolio" style="text-decoration: none; color: white;"><li class="nav-item active">Portfolio</li></a>
+        <a href="#Contact" style="text-decoration: none; color: white;"><li class="nav-item active">Contact</li></a>
     </ul>
     </div>
     </div>
@@ -256,6 +303,39 @@ background: linear-gradient(90deg, rgba(0, 103, 215, 1) 64%, rgba(36, 68, 99, 1)
         <p id="ina22" style="display: none;"><script>get_i18n('paragraph3','ina_INA14');</script></p>
 </div>
 </div>
+</div>
+<br>
+<div id="Services">
+<div class="bio-header">
+    <h1 style="color:#067bff;" id="eng2"><script>get_i18n('header4','en_US');</script></h1>
+    <h1 style="color:#067bff; display: none;" id="ina2"><script>get_i18n('header4','ina_INA');</script></h1>
+    <p id="eng3"><script>get_i18n('paragraph4','en_US');</script></p>
+    <p id="ina3" style="display: none;"><script>get_i18n('paragraph4','ina_INA');</script></p>
+</div>
+<div class="container">
+    <div class="row">
+    <div class="col-md-4" id="eng3"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"></p><p>Landing Page</p></button></div>
+    <div class="col-md-4" id="eng4"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"></p><p style="font-size: 19px;">E-commerce website</p></button></div>
+    <div class="col-md-4" id="eng5"><button class="btn btn-outline-primary btn-lg btn-block"><p style="color:#067bff;"></p><p>Fullstack web page</p></button></div>
+    </div>
+</div>
+<br>
+<div id="Contact" class="container">
+    <h2 style="color:#067bff;">Contact me</h2>
+    <div class="row">
+    <form id="contact-form">
+        <div class="col-md-4"><input type="hidden" name="time"></div>
+        <div class="col-md-4"><label>Name</label></div>
+        <div class="col-md-4"><input type="text" name="name" required></div>
+        <div class="col-md-4"><label>Email</label></div>
+        <div class="col-md-4"><input type="email" name="email" required></div>
+        <div class="col-md-4"><label>Subject</label></div>
+        <div class="col-md-4"><input type="text" name="title" required></div>
+        <div class="col-md-4"><label>Message</label></div>
+        <div class="col-md-4"><textarea name="message" required></textarea></div>
+         <div class="col-md-4"><input type="submit" value="Send"></div>
+    </form>
+    </div>
 </div>
 <hr>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
